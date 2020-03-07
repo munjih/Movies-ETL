@@ -1,0 +1,22 @@
+Several assumptions were made dealing with the three files.
+
+#1 Source file or directory is the same. 
+- There can be a change in where the files are stored or the file names can change.In this situation, the try-except block returns a message: "File not found. Can not proceed"
+
+#2 Wiki file contains at least >7000 rows of data. 
+- Used "7000" because that is about the number we dealt with in the current files. This number can change to "0" if we just want to check if there are any data or not.
+- In case the file does not have sufficient amount of data, the try-except block returns a message:"Not enough data entries to proceed. Please check the Wiki file."
+
+#3 Kaggle metadata file contains at least >7000 rows of data. 
+- Used "7000" because that is about the number we dealt with in the current files. This number can change to "0" if we just want to check if there are any data or not.
+- In case the file does not have sufficient amount of data, the try-except block returns a message:"Not enough data entries to proceed. Please check the Kaggle metadata file."
+
+#4 Column names remains the same for the updated files.
+- Used a try-except block to raise an error in case columns cannot be found due to name change, which will return a message:"Column name not found."
+
+#5 Rating file contains at least some data.
+- In case the file lacks any data, the try-except block returns a message:"Not enough data entries to proceed. Please check the Ratings file."
+
+#6 Database connection always works
+- There can be occasions when there is a OperationalError occurring due to failure in database connection.
+- In case of an error, the try-except block will return a message:"Error loading to database."
